@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="RA | FIND YOU NEED — Temukan pilihan parfum, fashion, dan kebutuhan gaya sehari-hari.">
+  <title>RA | FIND YOU NEED</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #000;
+      --panel: #0c0c0c;
+      --text: #f7f7f7;
+      --muted: #aaa;
+      --line: #666;
+      --soft-line: #333;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 28px 16px 36px;
+      display: flex;
+      justify-content: center;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+    }
+    .page { width: 100%; max-width: 630px; }
+    .preview-card {
+      border: 1px solid #303030;
+      border-radius: 28px;
+      background: var(--panel);
+      padding: 46px 27px 28px;
+      text-align: center;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.015);
+    }
+    .monogram {
+      width: 134px;
+      height: 134px;
+      margin: 0 auto 18px;
+      border: 2px solid #f4f4f4;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 39px;
+      font-weight: 600;
+      letter-spacing: -.04em;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(24px, 5.4vw, 36px);
+      line-height: 1.25;
+      font-weight: 750;
+      letter-spacing: -.035em;
+    }
+    .intro {
+      max-width: 490px;
+      margin: 18px auto 0;
+      color: #c5c5c5;
+      font-size: clamp(16px, 3.8vw, 24px);
+      line-height: 1.55;
+    }
+    .socials {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      margin: 18px 0 0;
+    }
+    .social-link {
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      border-radius: 9px;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .social-link:hover, .social-link:focus-visible { opacity: .72; transform: translateY(-2px); }
+    .social-link svg { width: 32px; height: 32px; }
+    .separator { height: 1px; background: #4b4b4b; margin: 51px 0 48px; }
+    .section-title {
+      margin: 0 0 30px;
+      text-align: left;
+      font-size: clamp(21px, 4.5vw, 29px);
+      font-weight: 700;
+      letter-spacing: -.025em;
+    }
+    .categories { display: grid; gap: 24px; }
+    .category {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      min-height: 124px;
+      padding: 22px 20px;
+      border: 2px solid var(--line);
+      border-radius: 23px;
+      text-decoration: none;
+      color: var(--text);
+      text-align: left;
+      transition: border-color .2s ease, background .2s ease, transform .2s ease;
+    }
+    .category:hover, .category:focus-visible {
+      border-color: #eee;
+      background: #141414;
+      transform: translateY(-2px);
+      outline: none;
+    }
+    .category-icon { flex: 0 0 35px; width: 35px; height: 35px; }
+    .category-icon svg { width: 100%; height: 100%; }
+    .category-copy { min-width: 0; flex: 1; }
+    .category-name {
+      display: block;
+      font-size: clamp(19px, 4.2vw, 27px);
+      line-height: 1.3;
+      font-weight: 500;
+      letter-spacing: -.025em;
+    }
+    .category-desc {
+      display: block;
+      margin-top: 12px;
+      color: #aaa;
+      font-size: clamp(15px, 3.5vw, 21px);
+      line-height: 1.35;
+    }
+    .arrow { flex: 0 0 auto; font-size: 27px; line-height: 1; }
+    footer {
+      margin-top: 29px;
+      color: #777;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-align: center;
+    }
+    @media (max-width: 430px) {
+      body { padding: 18px 12px 26px; }
+      .preview-card { padding: 38px 17px 25px; border-radius: 25px; }
+      .monogram { width: 112px; height: 112px; font-size: 34px; }
+      .separator { margin: 42px 0 38px; }
+      .section-title { margin-bottom: 25px; }
+      .categories { gap: 19px; }
+      .category { min-height: 112px; gap: 15px; padding: 18px 14px; border-radius: 20px; }
+      .category-icon { flex-basis: 30px; width: 30px; height: 30px; }
+      .category-desc { margin-top: 9px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="preview-card" aria-label="RA Find You Need">
+      <div class="monogram" aria-label="Monogram RA">RA</div>
+      <h1>RA | FIND YOU NEED</h1>
+      <p class="intro">Temukan pilihan yang cocok untuk gayamu. Siapa tahu, yang kamu cari ada di sini.</p>
+
+      <nav class="socials" aria-label="Media sosial">
+        <a class="social-link" href="https://www.instagram.com/rdk_ger" target="_blank" rel="noopener noreferrer" aria-label="Instagram @rdk_ger" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.7" r=".8" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </a>
+        <a class="social-link" href="https://www.tiktok.com/@redblack071" target="_blank" rel="noopener noreferrer" aria-label="TikTok parfum @redblack071" title="TikTok parfum">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 3v11.2a4.1 4.1 0 1 1-3.2-4"></path><path d="M14 3c.6 3.2 2.4 5 5.5 5.3"></path>
+          </svg>
+        </a>
+        <a class="social-link" href="https://www.tiktok.com/@outfitinkan" target="_blank" rel="noopener noreferrer" aria-label="TikTok outfit @outfitinkan" title="TikTok outfit" style="display:none">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 3v11.2a4.1 4.1 0 1 1-3.2-4"></path><path d="M14 3c.6 3.2 2.4 5 5.5 5.3"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <div class="separator"></div>
+      <h2 class="section-title">JELAJAHI SHOWCASE</h2>
+
+      <div class="categories">
+        <a class="category" href="https://vt.tokopedia.com/t/ZS9UHvpm29R6F-Cn3dx/" target="_blank" rel="noopener noreferrer" aria-label="Buka showcase Fragrance di Tokopedia">
+          <span class="category-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 5h7M15 5V2h3v3M14 8l-2 3v15a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V11l-2-3"></path>
+              <path d="M12 14h10M16 18h3M5 9l1 1M3 14h2M7 17l1 1M5 22h2M9 5l1 1"></path>
+            </svg>
+          </span>
+          <span class="category-copy">
+            <span class="category-name">FRAGRANCE</span>
+            <span class="category-desc">Koleksi parfum pilihan</span>
+          </span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="category" href="https://vt.tokopedia.com/t/ZS9UHvqXfqp58-d8GB3/" target="_blank" rel="noopener noreferrer" aria-label="Buka showcase Style and Essentials di Tokopedia">
+          <span class="category-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m10 5-7 4 3 8 4-2v13h12V15l4 2 3-8-7-4c-1.1 2.2-2.8 3.2-6 3.2S11.1 7.2 10 5Z"></path>
+            </svg>
+          </span>
+          <span class="category-copy">
+            <span class="category-name">STYLE &amp; ESSENTIALS</span>
+            <span class="category-desc">Baju, celana, sepatu, tas, aksesori, dan lainnya</span>
+          </span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <footer>RA | FIND YOU NEED</footer>
+    </section>
+  </main>
+</body>
+</html>
